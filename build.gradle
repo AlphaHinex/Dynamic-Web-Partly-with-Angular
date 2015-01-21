@@ -1,0 +1,48 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+archivesBaseName = 'cms-angular-web-seed'
+
+ext {
+	repoDir = 'WebContent/WEB-INF/lib'
+}
+
+sourceSets {
+	main {
+		java.srcDir 'src'
+		output.classesDir = 'WebContent/WEB-INF/classes'
+	}
+	test {
+		java.srcDir 'test'
+	}
+}
+
+eclipse.classpath.file {
+	whenMerged { classpath ->
+		classpath.entries.find { entry -> entry.kind == 'output'}*.path = 'WebContent/WEB-INF/classes'
+	}
+}
+
+dependencies {
+	new File(repoDir).eachFile { file ->
+		if(file.isFile() && file.name.endsWith('.jar')) {
+			def fileName = file.name.replace('.jar','')
+			def lastIdx = fileName.lastIndexOf('-')
+			if(lastIdx > -1) {
+				def jarname = fileName.substring(0, lastIdx)
+				def jarver = fileName.substring(lastIdx+1)
+				if(jarver ==~ /\d.*/) {
+					compile ":${jarname}:${jarver}"
+				} else {
+					compile ":${fileName}:"
+				}
+			} else {
+				compile ":${fileName}:"
+			}
+		}
+	}
+}

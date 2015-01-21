@@ -110,19 +110,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // ng-annotate tries to make the code safe for minification automatically
-    // by using the Angular long form for dependency injection.
-    ngAnnotate: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: ['*.js', '!oldieshim.js'],
-          dest: '.tmp/concat/scripts'
-        }]
-      }
-    },
-
     // Copies remaining files to places other tasks can use
     copy: {
       styles: {
@@ -161,14 +148,4 @@ module.exports = function (grunt) {
     grunt.task.run(['serve:' + target]);
   });
 
-  grunt.registerTask('build', [
-    'autoprefixer',
-    'concat',
-    'ngAnnotate'
-  ]);
-
-  grunt.registerTask('default', [
-    'newer:jshint',
-    'build'
-  ]);
 };

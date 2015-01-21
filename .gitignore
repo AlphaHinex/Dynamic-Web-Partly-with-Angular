@@ -10,3 +10,7 @@ build/
 # ignore binary files and web libs
 WebContent/WEB-INF/classes
 WebContent/WEB-INF/lib
+
+# ignore node and bower
+WebContent/ngapp/node_modules
+WebContent/ngapp/scripts/vendor

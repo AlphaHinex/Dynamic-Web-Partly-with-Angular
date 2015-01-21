@@ -1,2 +1,12 @@
-# ignore everything
-*
+# ignore gradle configs
+.gradle/
+build/
+
+# ignore eclipse configs
+.settings/
+.project
+.classpath
+
+# ignore binary files and web libs
+WebContent/WEB-INF/classes
+WebContent/WEB-INF/lib

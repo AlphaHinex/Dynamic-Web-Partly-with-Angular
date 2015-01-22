@@ -6,6 +6,7 @@ apply plugin: 'jetty'
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 archivesBaseName = 'cms-angular-web-seed'
+webAppDirName = 'WebContent'
 
 ext {
 	repoDir = 'WebContent/WEB-INF/lib'

@@ -13,6 +13,10 @@
     </div>
 
     <div>
+        <jsp:include page="ngapp/views/demo/portlet1.html"></jsp:include>
+    </div>
+
+    <div>
         <jsp:include page="ngapp/views/demo/portlet2.html"></jsp:include>
     </div>
 

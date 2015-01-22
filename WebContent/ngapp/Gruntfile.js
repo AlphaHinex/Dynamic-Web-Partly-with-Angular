@@ -22,7 +22,7 @@ module.exports = function (grunt) {
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       js: {
-        files: ['<%= ngapp.app %>/scripts/**/*.js'],
+        files: ['<%= ngapp.app %>/scripts/**/*.js', '!<%= ngapp.app %>/scripts/vendor/**/*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -77,7 +77,8 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= ngapp.app %>/scripts/**/*.js'
+          '<%= ngapp.app %>/scripts/**/*.js',
+          '!<%= ngapp.app %>/scripts/vendor/**/*.js'
         ]
       }
     },
@@ -133,7 +134,7 @@ module.exports = function (grunt) {
   });
 
 
-  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
+  grunt.registerTask('serve', 'Compile then start a connect web server', function () {
     grunt.task.run([
       'clean:server',
       'concurrent:server',

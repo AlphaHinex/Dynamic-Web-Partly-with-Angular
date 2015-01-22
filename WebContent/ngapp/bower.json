@@ -12,6 +12,5 @@
     "angular-bootstrap-nav-tree": "*"
   },
   "devDependencies": {
-  },
-  "appPath": "."
+  }
 }

@@ -12,5 +12,5 @@ WebContent/WEB-INF/classes
 WebContent/WEB-INF/lib
 
 # ignore node and bower
-WebContent/ngapp/node_modules
+node_modules/
 WebContent/ngapp/scripts/vendor

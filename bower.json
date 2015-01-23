@@ -12,5 +12,6 @@
     "angular-bootstrap-nav-tree": "*"
   },
   "devDependencies": {
-  }
+  },
+  "appPath": "WebContent/ngapp"
 }

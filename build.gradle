@@ -1,49 +1,66 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'war'
-apply plugin: 'jetty'
+apply plugin: 'com.bmuschko.tomcat'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
-archivesBaseName = 'cms-angular-web-seed'
+archivesBaseName = 'dynamic-web-partly-with-angular-seed'
 webAppDirName = 'WebContent'
 
-ext {
-	repoDir = 'WebContent/WEB-INF/lib'
-}
-
 sourceSets {
-	main {
-		java.srcDir 'src'
-		output.classesDir = 'WebContent/WEB-INF/classes'
-	}
-	test {
-		java.srcDir 'test'
-	}
+    main {
+        java.srcDir 'src'
+        output.classesDir = 'WebContent/WEB-INF/classes'
+    }
+    test {
+        java.srcDir 'test'
+    }
 }
 
 eclipse.classpath.file {
-	whenMerged { classpath ->
-		classpath.entries.find { entry -> entry.kind == 'output'}*.path = 'WebContent/WEB-INF/classes'
-	}
+    whenMerged { classpath ->
+        classpath.entries.find { entry -> entry.kind == 'output'}*.path = 'WebContent/WEB-INF/classes'
+    }
 }
 
+// retrieve gradle-tomcat-plugin from Bintray
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.0'
+    }
+}
+
+tomcat.httpPort = 9090
+tomcatRun.contextPath = 'now'
+
 dependencies {
-	new File(repoDir).eachFile { file ->
-		if(file.isFile() && file.name.endsWith('.jar')) {
-			def fileName = file.name.replace('.jar','')
-			def lastIdx = fileName.lastIndexOf('-')
-			if(lastIdx > -1) {
-				def jarname = fileName.substring(0, lastIdx)
-				def jarver = fileName.substring(lastIdx+1)
-				if(jarver ==~ /\d.*/) {
-					compile ":${jarname}:${jarver}"
-				} else {
-					compile ":${fileName}:"
-				}
-			} else {
-				compile ":${fileName}:"
-			}
-		}
-	}
+    def repoDir = 'WebContent/WEB-INF/lib'
+    new File(repoDir).eachFile { file ->
+        if(file.isFile() && file.name.endsWith('.jar')) {
+            def fileName = file.name.replace('.jar','')
+            def lastIdx = fileName.lastIndexOf('-')
+            if(lastIdx > -1) {
+                def jarname = fileName.substring(0, lastIdx)
+                def jarver = fileName.substring(lastIdx+1)
+                if(jarver ==~ /\d.*/) {
+                    compile ":${jarname}:${jarver}"
+                } else {
+                    compile ":${fileName}:"
+                }
+            } else {
+                compile ":${fileName}:"
+            }
+        }
+    }
+
+    // gradle-tomcat-plugin
+    def tomcatVersion = '6.0.41'
+    tomcat "org.apache.tomcat:catalina:${tomcatVersion}",
+           "org.apache.tomcat:coyote:${tomcatVersion}",
+           "org.apache.tomcat:jasper:${tomcatVersion}"
 }

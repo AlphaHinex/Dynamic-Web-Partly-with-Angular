@@ -7,16 +7,9 @@
 </head>
 <body>
 
-    <div id="portlet1">
-        <jsp:include page="ngapp/views/demo/portlet1.jsp"></jsp:include>
-    </div>
-
-    <div id="portlet2">
-        <jsp:include page="ngapp/views/demo/portlet1.jsp"></jsp:include>
-    </div>
-
     <div>
-        <jsp:include page="ngapp/views/demo/portlet2.html"></jsp:include>
+        <h3>Portal</h3>
+        <a href="${pageContext.request.contextPath}/demo/portal/portal.do">Portal Page</a>
     </div>
 
 </body>

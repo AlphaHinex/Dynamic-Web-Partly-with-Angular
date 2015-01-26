@@ -39,29 +39,31 @@ buildscript {
 tomcat.httpPort = 9090
 tomcatRun.contextPath = 'now'
 
-dependencies {
-    def repoDir = 'WebContent/WEB-INF/lib'
-    new File(repoDir).eachFile { file ->
-        if(file.isFile() && file.name.endsWith('.jar')) {
-            def fileName = file.name.replace('.jar','')
-            def lastIdx = fileName.lastIndexOf('-')
-            if(lastIdx > -1) {
-                def jarname = fileName.substring(0, lastIdx)
-                def jarver = fileName.substring(lastIdx+1)
-                if(jarver ==~ /\d.*/) {
-                    compile ":${jarname}:${jarver}"
-                } else {
-                    compile ":${fileName}:"
-                }
-            } else {
-                compile ":${fileName}:"
-            }
-        }
+repositories {
+    flatDir {
+        dirs 'WebContent/WEB-INF/lib'
     }
+}
 
+dependencies {
     // gradle-tomcat-plugin
     def tomcatVersion = '6.0.41'
     tomcat "org.apache.tomcat:catalina:${tomcatVersion}",
            "org.apache.tomcat:coyote:${tomcatVersion}",
            "org.apache.tomcat:jasper:${tomcatVersion}"
+
+    def spring4Ver = '4.1.3.RELEASE'
+    def springSecurityVer = '3.2.0.RELEASE'
+    def slf4jVer = '1.6.6'
+
+    // Spring
+    compile("org.springframework:spring-context:${spring4Ver}") {
+        exclude group: 'commons-logging'
+    }
+    compile "org.springframework:spring-webmvc:${spring4Ver}"
+    runtime "org.springframework.security:spring-security-web:${springSecurityVer}"
+
+    // Logging
+    runtime "org.slf4j:slf4j-log4j12:${slf4jVer}"
+
 }

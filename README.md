@@ -1,59 +1,48 @@
-cms-angular-web-seed
-====================
+dynamic-web-partly-with-angular-seed
+====================================
 
 
-目录结构规范
------------
-
-    │  .bowerrc
-    │  .gitignore
-    │  .jshintrc
-    │  bower.json
-    │  build.gradle
-    │  Gruntfile.js
-    │  package.json
-    │  README.md
-    │  
-    ├─doc
-    ├─src
-    ├─test
-    └─WebContent
-        │  index.jsp
-        │  
-        ├─ngapp
-        │  ├─images
-        │  ├─scripts
-        │  │  ├─controllers
-        │  │  │  └─demo
-        │  │  │          portletCtrl.js
-        │  │  │          
-        │  │  ├─directives
-        │  │  ├─modules
-        │  │  │  └─demo
-        │  │  │          portlet.js
-        │  │  │          
-        │  │  ├─services
-        │  │  └─vendor
-        │  │                  
-        │  ├─styles
-        │  └─views
-        │      └─demo
-        │              portlet1.html
-        │              portlet2.html
-        │              
-        └─WEB-INF
-            │  web.xml
-            │  
-            ├─classes
-            └─lib
+概述
+----
 
 
-js 代码质量监控辅助工具
------------------------
+准备工作
+-------
 
-### 准备工作
+* 【可选】可通过 [gradle](http://gradle.org/) 构建及运行项目
+* 【可选】可通过 [node.js](http://nodejs.org/) 
+* 【可选】可通过 [bower](http://bower.io/) 管理前端依赖
+* 【可选】可通过 [grunt](http://gruntjs.com/) 监控 `js` 代码质量
+* 通过 [grunt](http://gruntjs.com/) 执行前端的压缩及构建任务
 
-* 需要 [node.js](http://nodejs.org/) 环境
+
+生成 eclipse 配置文件
+-------------------
+
+    $ gradle cleanEclipse eclipse
+
+针对非 `gradle` 标准项目路径结构进行了如下设置：
+
+1. web 应用路径设置为 `WebContent`
+2. java 源码路径设置为 `src`
+3. 编译的 class 文件输出路径设置为 `WebContent/WEB-INF/classes`
+4. java 单元测试源码路径设置为 `test` 
+5. web 应用依赖的 jar 包路径设置为 `WebContent/WEB-INF/lib`
+
+
+发布项目
+-------
+
+通过 gradle 的 tomcat 插件 [gradle-tomcat-plugin](https://github.com/bmuschko/gradle-tomcat-plugin) 可将项目发布至 tomcat 容器内，不进行 java 代码开发时，可不使用 eclise 中的 tomcat。
+
+在 [build.gradle](build.gradle) 中设置 tomcat 发布的端口为 `9090`，`contextPath` 为 `now`。通过下面命令启动 tomcat 后即可访问 [http://localhost:9090/now](http://localhost:9090/now)
+> 注意：在 `require.js` 的入口文件 [main.js](WebContent/ngapp/scripts/main.js) 中硬编码了项目的 `contextPath`，如发布路径有变化需同步修改此处内容
+
+    $ gradle tomcatRun
+
+
+监控 `js` 代码质量
+-----------------
 
 ### 用法
 
@@ -102,7 +91,7 @@ js 代码质量监控辅助工具
         No problems
         
         
-        Running "newer-postrun:jshint:all:1:d:\workspace\cms-angular-web-seed\node_modules\grunt-newer\.cache" (newer-postrun) task
+        Running "newer-postrun:jshint:all:1:d:\workspace\dynamic-web-partly-with-angular-seed\node_modules\grunt-newer\.cache" (newer-postrun) task
         
         Done, without errors.
         
@@ -115,3 +104,50 @@ js 代码质量监控辅助工具
         Total 255ms
         
         Completed in 1.758s at Fri Jan 23 2015 14:11:11 GMT+0800 (中国标准时间) - Waiting...
+
+
+目录结构规范
+-----------
+
+    │  .bowerrc
+    │  .gitignore
+    │  .jshintrc
+    │  bower.json
+    │  build.gradle
+    │  Gruntfile.js
+    │  package.json
+    │  README.md
+    │  
+    ├─doc
+    ├─src
+    ├─test
+    └─WebContent
+        │  index.jsp
+        │  
+        ├─ngapp
+        │  ├─images
+        │  ├─scripts
+        │  │  ├─controllers
+        │  │  │  └─demo
+        │  │  │          portletCtrl.js
+        │  │  │          
+        │  │  ├─directives
+        │  │  ├─modules
+        │  │  │  └─demo
+        │  │  │          portlet.js
+        │  │  │          
+        │  │  ├─services
+        │  │  └─vendor
+        │  │                  
+        │  ├─styles
+        │  └─views
+        │      └─demo
+        │              portlet1.html
+        │              portlet2.html
+        │              
+        └─WEB-INF
+            │  web.xml
+            │  
+            ├─classes
+            └─lib
+

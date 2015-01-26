@@ -16,6 +16,14 @@ dynamic-web-partly-with-angular-seed
 * 通过 [grunt](http://gruntjs.com/) 执行前端的压缩及构建任务
 
 
+安装依赖
+--------
+
+    $ bower install
+
+若不使用 `bower` 进行依赖管理则需要手动将需要的 `js` 类库拷贝至 `ngapp/scripts/vendor` 路径下，需要的 `js` 类库可参见 [bower.json](bower.json)
+
+
 生成 eclipse 配置文件
 -------------------
 

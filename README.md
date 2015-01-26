@@ -36,6 +36,7 @@ dynamic-web-partly-with-angular-seed
 通过 gradle 的 tomcat 插件 [gradle-tomcat-plugin](https://github.com/bmuschko/gradle-tomcat-plugin) 可将项目发布至 tomcat 容器内，不进行 java 代码开发时，可不使用 eclise 中的 tomcat。
 
 在 [build.gradle](build.gradle) 中设置 tomcat 发布的端口为 `9090`，`contextPath` 为 `now`。通过下面命令启动 tomcat 后即可访问 [http://localhost:9090/now](http://localhost:9090/now)
+
 > 注意：在 `require.js` 的入口文件 [main.js](WebContent/ngapp/scripts/main.js) 中硬编码了项目的 `contextPath`，如发布路径有变化需同步修改此处内容
 
     $ gradle tomcatRun
@@ -43,8 +44,6 @@ dynamic-web-partly-with-angular-seed
 
 监控 `js` 代码质量
 -----------------
-
-### 用法
 
 1. 在命令行窗口使用 `npm` 安装所需工具
 

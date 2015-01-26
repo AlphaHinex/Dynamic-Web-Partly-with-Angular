@@ -1,3 +1,5 @@
 'use strict';
 
-angular.module('portlet', []);
+define(['angular'], function(angular) {
+    return angular.module('portlet', []);
+});

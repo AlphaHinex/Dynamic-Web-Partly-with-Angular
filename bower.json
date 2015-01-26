@@ -9,7 +9,9 @@
     "angular-resource": "1.3.8",
     "angular-route": "1.3.8",
     "angular-bootstrap": "0.12.0",
-    "angular-bootstrap-nav-tree": "*"
+    "angular-bootstrap-nav-tree": "*",
+    "requirejs": "~2.1.15",
+    "requirejs-domready": "~2.0.1"
   },
   "devDependencies": {
   },

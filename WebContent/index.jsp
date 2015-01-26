@@ -7,11 +7,11 @@
 </head>
 <body>
 
-    <div>
+    <div id="portlet1">
         <jsp:include page="ngapp/views/demo/portlet1.jsp"></jsp:include>
     </div>
 
-    <div>
+    <div id="portlet2">
         <jsp:include page="ngapp/views/demo/portlet1.jsp"></jsp:include>
     </div>
 

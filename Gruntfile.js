@@ -13,6 +13,23 @@ module.exports = function(grunt) {
         app: require('./bower.json').appPath || 'app',
     };
 
+    var files = grunt.file.expand('WebContent/ngapp/scritps/modules/*/bootstrap.js');
+    var requirejsOptions = {};
+
+    files.forEach(function(file) {
+        var filenamelist = file.split('/');
+        var num = filenamelist.length;
+        var filename = filenamelist[num-2];
+        requirejsOptions[filename] = {
+            options: {
+                baseUrl: 'WebContent/ngapp/scripts',
+                mainConfigFile: './main.js',
+                include: './modules/' + filename + '/bootstrap',
+                out: 'WebContent/ngappbuild/' + filename + '/bootstrap.js'
+            }
+        };
+    });
+
     // Define the configuration for all the tasks
     grunt.initConfig({
 
@@ -44,8 +61,31 @@ module.exports = function(grunt) {
                     '!<%= ngapp.app %>/scripts/vendor/**/*.js'
                 ]
             }
+        },
+
+        requirejs: {
+            main: {
+                options: {
+                    baseUrl: 'WebContent/ngapp/scripts',
+                    paths: {
+                        domReady: 'vendor/requirejs-domready/domReady',
+                        angular: 'vendor/angular/angular.min'
+                    },
+                    name: 'main',
+                    out: 'WebContent/ngappbuild/scripts/main.js'
+                }
+            },
+            demo: {
+                options: {
+                    baseUrl: 'WebContent/ngapp/scripts',
+                    include: './modules/demo/bootstrap',
+                    out: 'WebContent/ngappbuild/scripts/modules/demo/bootstrap.js'
+                }
+            }
         }
 
     });
+
+    grunt.registerTask('js', ['requirejs']);
 
 };

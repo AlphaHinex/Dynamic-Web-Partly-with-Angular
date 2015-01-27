@@ -64,22 +64,11 @@ module.exports = function(grunt) {
         },
 
         requirejs: {
-            main: {
-                options: {
-                    baseUrl: 'WebContent/ngapp/scripts',
-                    paths: {
-                        domReady: 'vendor/requirejs-domready/domReady',
-                        angular: 'vendor/angular/angular.min'
-                    },
-                    name: 'main',
-                    out: 'WebContent/ngappbuild/scripts/main.js'
-                }
-            },
             demo: {
                 options: {
                     baseUrl: 'WebContent/ngapp/scripts',
                     include: './modules/demo/bootstrap',
-                    out: 'WebContent/ngappbuild/scripts/modules/demo/bootstrap.js'
+                    out: 'WebContent/ngapp-build/scripts/modules/demo/bootstrap.js'
                 }
             }
         }

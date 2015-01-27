@@ -20,12 +20,10 @@
     </div>
 
     <script src="${pageContext.request.contextPath}/ngapp/scripts/vendor/angular/angular.js"></script>
-    <script src="${pageContext.request.contextPath}/ngapp/scripts/vendor/requirejs/require.js"></script>
+    <script data-main="${pageContext.request.contextPath}/ngapp/scripts/main.js" src="${pageContext.request.contextPath}/ngapp/scripts/vendor/requirejs/require.js"></script>
     <script src="${pageContext.request.contextPath}/ngapp/scripts/vendor/requirejs-domready-nodefine/domReady.js"></script>
     <script type="text/javascript">
-    require(['${pageContext.request.contextPath}/ngapp/scripts/main.js'], function() {
-        require(['modules/demo/bootstrap']);
-    });
+    require(['modules/demo/bootstrap']);
     </script>
 
 </body>

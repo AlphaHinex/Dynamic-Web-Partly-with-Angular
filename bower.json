@@ -6,10 +6,6 @@
     "json3": "3.3.2",
     "es5-shim": "4.0.5",
     "bootstrap": "3.3.2",
-    "angular-resource": "1.3.8",
-    "angular-route": "1.3.8",
-    "angular-bootstrap": "0.12.0",
-    "angular-bootstrap-nav-tree": "*",
     "requirejs": "~2.1.15",
     "requirejs-domready": "~2.0.1"
   },

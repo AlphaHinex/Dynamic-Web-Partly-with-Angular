@@ -96,7 +96,7 @@ module.exports = function(grunt) {
                 cwd: '<%= ngapp.app %>/scripts',
                 src: [
                     'main.js',
-                    'vendor/angular/angular.min.js',
+                    'vendor/angular/angular.js',
                     'vendor/requirejs/require.js',
                     'vendor/requirejs-domready-nodefine/domReady.js'
                 ],

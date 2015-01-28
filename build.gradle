@@ -66,3 +66,17 @@ dependencies {
     runtime "org.slf4j:slf4j-log4j12:${slf4jVer}"
 
 }
+
+war {
+    exclude 'ngapp'
+    exclude 'ngapp-build'
+    from('WebContent/ngapp-build') {
+        into 'ngapp'
+    }
+}
+
+task buildStatic {
+    println "cmd /C grunt build:static".execute().text
+}
+
+task getwar(dependsOn: [clean, buildStatic, war]) {}

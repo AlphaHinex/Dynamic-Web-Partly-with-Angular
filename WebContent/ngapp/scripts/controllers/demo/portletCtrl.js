@@ -4,7 +4,7 @@ define(['modules/demo/portlet'], function(portlet) {
     
     portlet
 
-        .controller('MyController', ['$scope', function($scope) {
+        .controller('MyController', function($scope) {
             $scope.mythings = [{
                 name: 'Thing 1'
             }, {
@@ -20,9 +20,9 @@ define(['modules/demo/portlet'], function(portlet) {
             $scope.remove = function(index) {
                 $scope.mythings.splice(index, 1);
             };
-        }])
+        })
 
-        .controller('MyCounter', ['$scope', function($scope) {
+        .controller('MyCounter', function($scope) {
             $scope.counter = 1;
 
             $scope.decrease = function() {
@@ -36,6 +36,6 @@ define(['modules/demo/portlet'], function(portlet) {
                     $scope.counter++;
                 }
             };
-        }]);
+        });
 
 });

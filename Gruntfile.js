@@ -11,8 +11,10 @@ module.exports = function(grunt) {
     // Configurable paths for the application
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
+        dist: require('./bower.json').distPath || 'dist'
     };
 
+    // this block is not works now
     var files = grunt.file.expand('WebContent/ngapp/scritps/modules/*/bootstrap.js');
     var requirejsOptions = {};
 
@@ -29,6 +31,7 @@ module.exports = function(grunt) {
             }
         };
     });
+    // now work block end
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -63,18 +66,39 @@ module.exports = function(grunt) {
             }
         },
 
+        clean: {
+          dist: {
+            files: [{
+              src: [ '<%= ngapp.dist %>/**/*' ]
+            }]
+          }
+        },
+
+        // ng-annotate tries to make the code safe for minification automatically
+        // by using the Angular long form for dependency injection.
+        ngAnnotate: {
+          dist: {
+            files: [{
+              expand: true,
+              cwd: '<%= ngapp.app %>/scripts',
+              src: ['**/*.js', '!vendor/**/*.js'],
+              dest: '<%= ngapp.dist %>/scripts'
+            }]
+          }
+        },
+
         requirejs: {
             demo: {
                 options: {
-                    baseUrl: 'WebContent/ngapp/scripts',
+                    baseUrl: '<%= ngapp.dist %>/scripts',
                     include: './modules/demo/bootstrap',
-                    out: 'WebContent/ngapp-build/scripts/modules/demo/bootstrap.js'
+                    out: '<%= ngapp.dist %>/scripts/modules/demo/bootstrap.js'
                 }
             }
         }
 
     });
 
-    grunt.registerTask('js', ['requirejs']);
+    grunt.registerTask('js', ['clean', 'ngAnnotate', 'requirejs']);
 
 };

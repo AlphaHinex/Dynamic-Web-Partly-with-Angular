@@ -10,5 +10,6 @@
   },
   "devDependencies": {
   },
-  "appPath": "WebContent/ngapp"
+  "appPath": "WebContent/ngapp",
+  "distPath": "WebContent/ngapp-build"
 }

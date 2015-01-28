@@ -78,6 +78,51 @@ module.exports = function(grunt) {
           }
         },
 
+        cssmin: {
+          dist: {
+            files: [{
+                expand: true,
+                cwd: '<%= ngapp.app %>/styles',
+                src: ['**/*.css'],
+                dest: '<%= ngapp.dist %>/styles'
+            }]
+          }
+        },
+
+        uglify: {
+          dist: {
+            files: [{
+                expand: true,
+                cwd: '<%= ngapp.app %>/scripts',
+                src: [
+                    'main.js',
+                    'vendor/angular/angular.min.js',
+                    'vendor/requirejs/require.js',
+                    'vendor/requirejs-domready-nodefine/domReady.js'
+                ],
+                dest: '<%= ngapp.dist %>/scripts'
+            }]
+          }
+        },
+
+        htmlmin: {
+          dist: {
+            options: {
+              collapseWhitespace: true,
+              conservativeCollapse: true,
+              collapseBooleanAttributes: true,
+              removeCommentsFromCDATA: true,
+              removeOptionalTags: true
+            },
+            files: [{
+              expand: true,
+              cwd: '<%= ngapp.app %>/views',
+              src: ['**/*.html'],
+              dest: '<%= ngapp.dist %>/views'
+            }]
+          }
+        },
+
         // ng-annotate tries to make the code safe for minification automatically
         // by using the Angular long form for dependency injection.
         ngAnnotate: {
@@ -103,6 +148,8 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('js', ['clean', 'ngAnnotate', 'requirejs']);
+    grunt.registerTask('min:static', ['cssmin', 'uglify', 'htmlmin', 'ngAnnotate', 'requirejs']);
+
+    grunt.registerTask('build:static', ['clean', 'min:static']);
 
 };

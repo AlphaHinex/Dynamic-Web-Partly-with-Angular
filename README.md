@@ -53,6 +53,7 @@ dynamic-web-partly-with-angular-seed
 前端代码构建
 -----------
 
+    $ grunt build:static
 
 
 项目整体打包

@@ -69,7 +69,11 @@ module.exports = function(grunt) {
         clean: {
           dist: {
             files: [{
-              src: [ '<%= ngapp.dist %>/**/*' ]
+                dot: true,
+                src: [ 
+                    '.tmp',
+                    '<%= ngapp.dist %>/**/*' 
+                ]
             }]
           }
         },
@@ -82,7 +86,7 @@ module.exports = function(grunt) {
               expand: true,
               cwd: '<%= ngapp.app %>/scripts',
               src: ['**/*.js', '!vendor/**/*.js'],
-              dest: '<%= ngapp.dist %>/scripts'
+              dest: '.tmp/scripts'
             }]
           }
         },
@@ -90,7 +94,7 @@ module.exports = function(grunt) {
         requirejs: {
             demo: {
                 options: {
-                    baseUrl: '<%= ngapp.dist %>/scripts',
+                    baseUrl: '.tmp/scripts',
                     include: './modules/demo/bootstrap',
                     out: '<%= ngapp.dist %>/scripts/modules/demo/bootstrap.js'
                 }

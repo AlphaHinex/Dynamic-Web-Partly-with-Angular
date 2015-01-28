@@ -17,3 +17,4 @@ WebContent/ngapp/scripts/vendor
 
 # ingore front build folder
 WebContent/ngapp-build
+.tmp

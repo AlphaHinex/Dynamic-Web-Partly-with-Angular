@@ -9,16 +9,16 @@ dynamic-web-partly-with-angular-seed
 准备工作
 -------
 
-* 【可选】可通过 [gradle](http://gradle.org/) 构建及运行项目
-* 【可选】可通过 [node.js](http://nodejs.org/) 
-* 【可选】可通过 [bower](http://bower.io/) 管理前端依赖
-* 【可选】可通过 [grunt](http://gruntjs.com/) 监控 `js` 代码质量
-* 通过 [grunt](http://gruntjs.com/) 执行前端的压缩及构建任务
+* 使用 [node.js](http://nodejs.org/) 安装所需工具
+* 使用 [bower](http://bower.io/) 管理前端依赖
+* 使用 [grunt](http://gruntjs.com/) 执行前端的压缩及构建任务
+* 使用 [gradle](http://gradle.org/) 构建及运行项目
 
 
 安装依赖
 --------
 
+    $ npm install
     $ bower install
 
 若不使用 `bower` 进行依赖管理则需要手动将需要的 `js` 类库拷贝至 `ngapp/scripts/vendor` 路径下，需要的 `js` 类库可参见 [bower.json](bower.json)
@@ -50,20 +50,31 @@ dynamic-web-partly-with-angular-seed
     $ gradle tomcatRun
 
 
+前端代码构建
+-----------
+
+
+
+项目整体打包
+-----------
+
+    $ gradle getwar
+
+`getwar` 任务中包含了前端代码（即使用 `AngularJS` 开发的内容）的构建任务。若要单独执行前端构建，可使用：
+
+    $ grunt build:static
+
+
 监控 `js` 代码质量
 -----------------
 
-1. 在命令行窗口使用 `npm` 安装所需工具
-
-        $ npm install
-
-2. 使用 `grunt` 任务自动监控 `js` 文件变化并给出代码改进意见
+1. 使用 `grunt` 任务自动监控 `js` 文件变化并给出代码改进意见
 
         $ grunt watch
         Running "watch" task
         Waiting...
 
-3. 每次修改 `js` 文件并保存后，命令行窗口会显示类似如下提示信息
+2. 每次修改 `js` 文件并保存后，命令行窗口会显示类似如下提示信息
 
         >> File "WebContent\ngapp\scripts\modules\demo\portlet.js" changed.
         Running "newer:jshint:all" (newer) task

@@ -143,30 +143,69 @@ dynamic-web-partly-with-angular-seed
     └─WebContent
         │  index.jsp
         │  
-        ├─ngapp
-        │  ├─images
-        │  ├─scripts
-        │  │  ├─controllers
+        ├─ngapp                 // AngularJS 开发根路径
+        │  ├─images             // 图片路径
+        │  ├─scripts            // 脚本根路径
+        │  │  │  main.js        // RequireJS 入口文件
+        │  │  │  
+        │  │  ├─controllers     // controller 层根路径
         │  │  │  └─demo
-        │  │  │          portletCtrl.js
+        │  │  │      ├─main
+        │  │  │      │  │  mainCtrl.js
+        │  │  │      │  │  
+        │  │  │      │  └─announcement
+        │  │  │      │          pic.js
+        │  │  │      │          thumbnail.js
+        │  │  │      │          
+        │  │  │      └─portal
+        │  │  │              portletCtrl.js
         │  │  │          
-        │  │  ├─directives
-        │  │  ├─modules
+        │  │  ├─directives      // 指令层根路径
+        │  │  ├─modules         // modules 根路径
         │  │  │  └─demo
-        │  │  │          portlet.js
-        │  │  │          
-        │  │  ├─services
-        │  │  └─vendor
-        │  │                  
-        │  ├─styles
-        │  └─views
+        │  │  │      ├─main
+        │  │  │      │      bootstrap.js
+        │  │  │      │      main.js
+        │  │  │      │      
+        │  │  │      └─portal
+        │  │  │              bootstrap.js
+        │  │  │              portlet.js
+        │  │  │       
+        │  │  ├─services        // service 层根路径
+        │  │  │  └─demo
+        │  │  │      └─main
+        │  │  │              picplaceholder.js
+        │  │  │              
+        │  │  └─vendor          // 三方依赖类库根路径
+        │  │      └─requirejs-domready-nodefine
+        │  │              domReady.js
+        │  │                           
+        │  ├─styles             // 样式表根路径
+        │  │      bootstrap.css
+        │  │      
+        │  └─views              // view 层根路径
         │      └─demo
-        │              portlet1.html
-        │              portlet2.html
+        │          ├─main
+        │          │  └─announcement
+        │          │          pic.html
+        │          │          thumbnail.html
+        │          │          
+        │          └─portal
+        │                  portlet1.html
+        │                  portlet2.html
         │              
         └─WEB-INF
             │  web.xml
-            │  
+            │
             ├─classes
+            │  
+            ├─conf
+            │      spring-mvc-context.xml
+            │  
+            ├─jsp
+            │   └─demo
+            │      └─portal
+            │               main.jsp
+            │               portal.jsp
             └─lib
 

@@ -9,8 +9,8 @@
 
     <div>
         <h3>Portal</h3>
-        <a href="${pageContext.request.contextPath}/demo/portal/portal.do">Portal Page</a>
-        <a href="${pageContext.request.contextPath}/demo/portal/home.do">Home Page</a>
+        <a href="${pageContext.request.contextPath}/demo/portal/portal.do">Portal Page</a><br>
+        <a href="${pageContext.request.contextPath}/demo/portal/main.do">Main Page</a>
     </div>
 
 </body>

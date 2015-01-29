@@ -3,20 +3,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Portal Page</title>
 </head>
 <body>
 
     <div id="portlet1">
-        <jsp:include page="/ngapp/views/demo/portlet1.html"></jsp:include>
+        <jsp:include page="/ngapp/views/demo/portal/portlet1.html"></jsp:include>
     </div>
 
     <div id="portlet2">
-        <jsp:include page="/ngapp/views/demo/portlet1.html"></jsp:include>
+        <jsp:include page="/ngapp/views/demo/portal/portlet1.html"></jsp:include>
     </div>
 
     <div>
-        <jsp:include page="/ngapp/views/demo/portlet2.html"></jsp:include>
+        <jsp:include page="/ngapp/views/demo/portal/portlet2.html"></jsp:include>
     </div>
 
     <script src="${pageContext.request.contextPath}/ngapp/scripts/vendor/angular/angular.js"></script>

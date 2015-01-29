@@ -18,7 +18,8 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<!-- Maps '/' requests to the 'home' view -->
+	<!-- directly redirect to jsp view -->
 	<mvc:view-controller path="/demo/portal/portal.do" view-name="demo/portal/portal"/>
+	<mvc:view-controller path="/demo/portal/main.do" view-name="demo/portal/main"/>
 
 </beans>

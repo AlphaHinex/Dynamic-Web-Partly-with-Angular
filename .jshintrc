@@ -20,5 +20,5 @@
   "globals": {
     "angular": false
   },
-  "predef": ["define"]
+  "predef": ["define", "domReady"]
 }

@@ -15,17 +15,18 @@ module.exports = function(grunt) {
     };
 
     // one requirejs task per folder under modules
-    var files = grunt.file.expand('WebContent/ngapp/scripts/modules/*/bootstrap.js');
+    var files = grunt.file.expand('WebContent/ngapp/scripts/modules/**/bootstrap.js');
     var requirejsOptions = {};
     files.forEach(function(file) {
         var allPaths = file.split('/');
-        var num = allPaths.length;
-        var parentFolder = allPaths[num-2];
-        requirejsOptions[parentFolder] = {
+        var fromIdx = allPaths.indexOf('modules') + 1;
+        var toIdx = -1;
+        var parentFolders = allPaths.slice(fromIdx, toIdx);
+        requirejsOptions[parentFolders.join('-')] = {
             options: {
                 baseUrl: '.tmp/scripts',
-                include: './modules/' + parentFolder + '/bootstrap',
-                out: '<%= ngapp.dist %>/scripts/modules/' + parentFolder + '/bootstrap.js'
+                include: './modules/' + parentFolders.join('/') + '/bootstrap',
+                out: '<%= ngapp.dist %>/scripts/modules/' + parentFolders.join('/') + '/bootstrap.js'
             }
         };
     });

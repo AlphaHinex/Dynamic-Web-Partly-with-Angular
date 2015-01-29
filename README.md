@@ -143,47 +143,44 @@ dynamic-web-partly-with-angular-seed
     └─WebContent
         │  index.jsp
         │  
-        ├─ngapp                 // AngularJS 开发根路径
-        │  ├─images             // 图片路径
-        │  ├─scripts            // 脚本根路径
-        │  │  │  main.js        // RequireJS 入口文件
+        ├─ngapp                         // AngularJS 开发根路径
+        │  ├─images                     // 图片根路径
+        │  ├─scripts                    // 脚本根路径
+        │  │  │  main.js                // RequireJS 入口文件
         │  │  │  
-        │  │  ├─controllers     // controller 层根路径
+        │  │  ├─apps                    // 各业务模块脚本根路径
         │  │  │  └─demo
-        │  │  │      ├─main
-        │  │  │      │  │  mainCtrl.js
+        │  │  │      ├─main             // 如 demo/main 业务模块
+        │  │  │      │  │  bootstrap.js // 具体模块根路径下必须存在该文件
         │  │  │      │  │  
-        │  │  │      │  └─announcement
-        │  │  │      │          pic.js
-        │  │  │      │          thumbnail.js
+        │  │  │      │  ├─controllers   // controller 层根路径
+        │  │  │      │  │  │  mainCtrl.js
+        │  │  │      │  │  │  
+        │  │  │      │  │  └─announcement
+        │  │  │      │  │          picCtrl.js
+        │  │  │      │  │          thumbnailCtrl.js
+        │  │  │      │  │        
+        │  │  │      │  ├─directives    // 指令层根路径
+        │  │  │      │  │          
+        │  │  │      │  ├─modules       // modules 根路径
+        │  │  │      │  │      mainModule.js
+        │  │  │      │  │      
+        │  │  │      │  └─services      // service 层根路径
+        │  │  │      │          picPlaceholderService.js
         │  │  │      │          
-        │  │  │      └─portal
-        │  │  │              portletCtrl.js
-        │  │  │          
-        │  │  ├─directives      // 指令层根路径
-        │  │  ├─modules         // modules 根路径
-        │  │  │  └─demo
-        │  │  │      ├─main
-        │  │  │      │      bootstrap.js
-        │  │  │      │      main.js
-        │  │  │      │      
-        │  │  │      └─portal
+        │  │  │      └─portal           // 业务模块下脚本较少时可将所有脚本放在同一目录下
         │  │  │              bootstrap.js
-        │  │  │              portlet.js
-        │  │  │       
-        │  │  ├─services        // service 层根路径
-        │  │  │  └─demo
-        │  │  │      └─main
-        │  │  │              picplaceholder.js
+        │  │  │              portletCtrl.js
+        │  │  │              portletModule.js
         │  │  │              
-        │  │  └─vendor          // 三方依赖类库根路径
+        │  │  └─vendor                  // 三方依赖类库根路径
         │  │      └─requirejs-domready-nodefine
         │  │              domReady.js
         │  │                           
-        │  ├─styles             // 样式表根路径
+        │  ├─styles                     // 样式表根路径
         │  │      bootstrap.css
         │  │      
-        │  └─views              // view 层根路径
+        │  └─views                      // view 层根路径
         │      └─demo
         │          ├─main
         │          │  └─announcement
@@ -209,3 +206,13 @@ dynamic-web-partly-with-angular-seed
             │               portal.jsp
             └─lib
 
+* `WebContent/ngapp` 为 `AngularJS` 开发根路径
+* `WebContent/ngapp/scripts/main.js` 为 `RequireJS` 入口文件，其中的 `contextPath` 在发布时需根据实际情况进行修改
+* `WebContent/ngapp/scripts/apps` 为各业务模块脚本根路径，可在此路径下创建具体业务模块路径，如 `./demo/main` 和 `./demo/portal`
+* 每个具体业务模块根路径下必须存在 `bootstrap.js` 文件，作为驱动页面上 `AngularJS` 脚本及 `RequireJS` 依赖的入口
+* `js` 脚本文件按驼峰方式命名，首字母小写
+* 具体业务模块下 `js` 文件按照 `MVC` 结构划分路径，如 `./controllers` 路径下存放 `controller` 脚本（参考 `demo/main` 业务模块）；若业务模块下脚本较少，也可将 `js` 文件均放置在同一目录下（如 `demo/portal` 业务模块）
+* `controller` 脚本以 `Ctrl.js` 结尾
+* `service` 脚本以 `Service.js` 结尾
+* `directive` 脚本以 `Directive.js` 结尾
+* `module` 脚本以 `Module.js` 结尾

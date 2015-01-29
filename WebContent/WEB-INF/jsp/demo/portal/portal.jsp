@@ -23,7 +23,7 @@
     <script data-main="${pageContext.request.contextPath}/ngapp/scripts/main.js" src="${pageContext.request.contextPath}/ngapp/scripts/vendor/requirejs/require.js"></script>
     <script src="${pageContext.request.contextPath}/ngapp/scripts/vendor/requirejs-domready-nodefine/domReady.js"></script>
     <script type="text/javascript">
-    require(['modules/demo/portal/bootstrap']);
+    require(['apps/demo/portal/bootstrap']);
     </script>
 
 </body>

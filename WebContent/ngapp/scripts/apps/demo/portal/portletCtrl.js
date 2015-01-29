@@ -1,6 +1,6 @@
 'use strict';
 
-define(['modules/demo/portal/portlet'], function(portlet) {
+define(['apps/demo/portal/portletModule'], function(portlet) {
     
     portlet
 

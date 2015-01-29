@@ -14,19 +14,19 @@ module.exports = function(grunt) {
         dist: require('./bower.json').distPath || 'dist'
     };
 
-    // one requirejs task per folder under modules
-    var files = grunt.file.expand('WebContent/ngapp/scripts/modules/**/bootstrap.js');
+    // one requirejs task per folder under apps
+    var files = grunt.file.expand('WebContent/ngapp/scripts/apps/**/bootstrap.js');
     var requirejsOptions = {};
     files.forEach(function(file) {
         var allPaths = file.split('/');
-        var fromIdx = allPaths.indexOf('modules') + 1;
+        var fromIdx = allPaths.indexOf('apps') + 1;
         var toIdx = -1;
         var parentFolders = allPaths.slice(fromIdx, toIdx);
         requirejsOptions[parentFolders.join('-')] = {
             options: {
                 baseUrl: '.tmp/scripts',
-                include: './modules/' + parentFolders.join('/') + '/bootstrap',
-                out: '<%= ngapp.dist %>/scripts/modules/' + parentFolders.join('/') + '/bootstrap.js'
+                include: './apps/' + parentFolders.join('/') + '/bootstrap',
+                out: '<%= ngapp.dist %>/scripts/apps/' + parentFolders.join('/') + '/bootstrap.js'
             }
         };
     });

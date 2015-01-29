@@ -1,8 +1,8 @@
 'use strict';
 
 define([
-    'modules/demo/main/main',
-    'services/demo/main/picplaceholder'
+    'apps/demo/main/modules/mainModule',
+    'apps/demo/main/services/picPlaceholderService'
   ],
   
   function(main) {

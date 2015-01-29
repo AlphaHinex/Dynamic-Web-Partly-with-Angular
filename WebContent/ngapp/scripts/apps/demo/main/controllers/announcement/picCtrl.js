@@ -1,6 +1,6 @@
 'use strict';
 
-define(['modules/demo/main/main'], function(main) {
+define(['apps/demo/main/modules/mainModule'], function(main) {
 
     main
         .controller('DemoMainAnnouncementPicCtrl', ['$scope', function($scope) {

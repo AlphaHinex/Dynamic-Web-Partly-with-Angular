@@ -14,24 +14,21 @@ module.exports = function(grunt) {
         dist: require('./bower.json').distPath || 'dist'
     };
 
-    // this block is not works now
-    var files = grunt.file.expand('WebContent/ngapp/scritps/modules/*/bootstrap.js');
+    // one requirejs task per folder under modules
+    var files = grunt.file.expand('WebContent/ngapp/scripts/modules/*/bootstrap.js');
     var requirejsOptions = {};
-
     files.forEach(function(file) {
-        var filenamelist = file.split('/');
-        var num = filenamelist.length;
-        var filename = filenamelist[num-2];
-        requirejsOptions[filename] = {
+        var allPaths = file.split('/');
+        var num = allPaths.length;
+        var parentFolder = allPaths[num-2];
+        requirejsOptions[parentFolder] = {
             options: {
-                baseUrl: 'WebContent/ngapp/scripts',
-                mainConfigFile: './main.js',
-                include: './modules/' + filename + '/bootstrap',
-                out: 'WebContent/ngappbuild/' + filename + '/bootstrap.js'
+                baseUrl: '.tmp/scripts',
+                include: './modules/' + parentFolder + '/bootstrap',
+                out: '<%= ngapp.dist %>/scripts/modules/' + parentFolder + '/bootstrap.js'
             }
         };
     });
-    // now work block end
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -136,15 +133,7 @@ module.exports = function(grunt) {
           }
         },
 
-        requirejs: {
-            demo: {
-                options: {
-                    baseUrl: '.tmp/scripts',
-                    include: './modules/demo/bootstrap',
-                    out: '<%= ngapp.dist %>/scripts/modules/demo/bootstrap.js'
-                }
-            }
-        }
+        requirejs: requirejsOptions
 
     });
 

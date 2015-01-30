@@ -5,7 +5,7 @@ apply plugin: 'com.bmuschko.tomcat'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
-archivesBaseName = 'dynamic-web-partly-with-angular-seed'
+archivesBaseName = 'now'
 webAppDirName = 'WebContent'
 
 sourceSets {
@@ -76,14 +76,6 @@ task copyDeps(type: Copy) {
 
 task forEclipse(dependsOn: [cleanEclipse, 'eclipse', copyDeps]) {}
 
-war {
-    exclude 'ngapp'
-    exclude 'ngapp-build'
-    from('WebContent/ngapp-build') {
-        into 'ngapp'
-    }
-}
-
 task buildStatic() << {
     // on windows:
     println "cmd /C grunt build:static".execute().text
@@ -92,4 +84,23 @@ task buildStatic() << {
     //println "grunt build:static".execute().text
 }
 
-task getWar(dependsOn: [clean, buildStatic, war]) {}
+task updateContextPath() {
+    def mainFilePath = "$projectDir/WebContent/ngapp-build/scripts/main.js"
+    def charset = 'utf-8'
+    def lines = new File(mainFilePath).readLines(charset)
+    new File(mainFilePath).withWriter(charset) { writer ->
+        lines.each { line ->
+            writer.write line.replaceAll(/var contextPath="[^\"]+"/, "var contextPath=\"/$archivesBaseName\"")
+        }
+    }
+}
+
+war {
+    exclude 'ngapp'
+    exclude 'ngapp-build'
+    from('WebContent/ngapp-build') {
+        into 'ngapp'
+    }
+}
+
+task getWar(dependsOn: [clean, buildStatic, updateContextPath, war]) {}

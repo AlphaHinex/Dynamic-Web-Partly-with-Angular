@@ -36,7 +36,7 @@ buildscript {
 }
 
 tomcat.httpPort = 9090
-tomcatRun.contextPath = 'now'
+tomcatRun.contextPath = archivesBaseName
 
 repositories {
     flatDir {

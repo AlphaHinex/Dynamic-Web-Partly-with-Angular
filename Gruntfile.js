@@ -40,15 +40,16 @@ module.exports = function(grunt) {
         // copy bower installed components to dist folder
         bower: {
             dev: {
-                dest: '<%= ngapp.app %>/',
+                dest: '<%= ngapp.app %>/vendor/',
                 js_dest: '<%= ngapp.app %>/scripts/vendor/',
-                css_dest: '<%= ngapp.app %>/styles/',
-                fonts_dest: '<%= ngapp.app %>/fonts/',
+                css_dest: '<%= ngapp.app %>/styles/vendor/',
                 options: {
                     expand: true,
+                    ignorePackages: ['jquery'],
                     packageSpecific: {
-                        'angular.js': {
-                            files: ['angular/angular.min.js']
+                        'bootstrap': {
+                            keepExpandedHierarchy: false,
+                            files: ['dist/css/bootstrap.css']
                         }
                     }
                 }
@@ -110,9 +111,7 @@ module.exports = function(grunt) {
                 cwd: '<%= ngapp.app %>/scripts',
                 src: [
                     'main.js',
-                    'vendor/angular/angular.js',
-                    'vendor/requirejs/require.js',
-                    'vendor/requirejs-domready-nodefine/domReady.js'
+                    'vendor/**/*.js'
                 ],
                 dest: '<%= ngapp.dist %>/scripts'
             }]

@@ -15,6 +15,7 @@ WebContent/WEB-INF/lib
 node_modules/
 bower_components/
 WebContent/ngapp/scripts/vendor
+WebContent/ngapp/styles/vendor
 
 # ingore front build folder
 WebContent/ngapp-build

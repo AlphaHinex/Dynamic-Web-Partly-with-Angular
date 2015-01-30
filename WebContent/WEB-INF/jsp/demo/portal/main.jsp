@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Home Page</title>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/ngapp/styles/bootstrap.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/ngapp/styles/vendor/bootstrap/bootstrap.css" />
 </head>
 <body>
 

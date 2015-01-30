@@ -54,7 +54,15 @@ dynamic-web-partly-with-angular-seed
 前端代码构建
 -----------
 
+前端代码，指 `AngularJS` 开发的内容，可用如下方式执行构建任务：
+
     $ grunt build:static
+
+或
+
+    $ gradle buildStatic
+
+`gradle buildStatic` 是对 `grunt build:static` 的简单调用，使用时需要在 [build.gradle](build.gradle) 中选择适当的版本（当前为 `windows` 版）
 
 
 项目整体打包
@@ -62,9 +70,9 @@ dynamic-web-partly-with-angular-seed
 
     $ gradle getWar
 
-`getWar` 任务中包含了前端代码（即使用 `AngularJS` 开发的内容）的构建任务。若要单独执行前端构建，可使用：
+`getWar` 任务中包含了前端代码的构建任务，之后会根据 [build.gradle](build.gradle) 中设置的 `archivesBaseName` 修改编译后的 `RequireJS` 入口文件 `main.js`，并将其打入 `war` 包中。
 
-    $ grunt build:static
+即，使用此方式打 `war` 包无需再手动修改 `war` 包中内容（以 `war` 包名称作为 `contextPath`），可直接发布至 web 容器内
 
 
 监控 `js` 代码质量

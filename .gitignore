@@ -13,6 +13,7 @@ WebContent/WEB-INF/lib
 
 # ignore node and bower
 node_modules/
+bower_components/
 WebContent/ngapp/scripts/vendor
 
 # ingore front build folder

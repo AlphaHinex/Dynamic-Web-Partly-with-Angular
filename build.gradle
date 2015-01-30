@@ -67,6 +67,15 @@ dependencies {
 
 }
 
+//copying all dependencies attached into a specific folder
+task copyDeps(type: Copy) {
+    from configurations.compile
+    from configurations.runtime
+    into 'WebContent/WEB-INF/lib'
+}
+
+task forEclipse(dependsOn: [cleanEclipse, 'eclipse', copyDeps]) {}
+
 war {
     exclude 'ngapp'
     exclude 'ngapp-build'
@@ -83,4 +92,4 @@ task buildStatic() << {
     //println "grunt build:static".execute().text
 }
 
-task getwar(dependsOn: [clean, buildStatic, war]) {}
+task getWar(dependsOn: [clean, buildStatic, war]) {}

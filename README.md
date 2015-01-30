@@ -27,7 +27,7 @@ dynamic-web-partly-with-angular-seed
 生成 eclipse 配置文件
 -------------------
 
-    $ gradle cleanEclipse eclipse
+    $ gradle forEclipse
 
 针对非 `gradle` 标准项目路径结构进行了如下设置：
 
@@ -36,6 +36,7 @@ dynamic-web-partly-with-angular-seed
 3. 编译的 class 文件输出路径设置为 `WebContent/WEB-INF/classes`
 4. java 单元测试源码路径设置为 `test` 
 5. web 应用依赖的 jar 包路径设置为 `WebContent/WEB-INF/lib`
+6. `forEclipse` 任务包含生成 `Eclipse IDE` 使用的文件，并将 [build.gradle](build.gradle) 中设置的依赖拷贝至 `WebContent/WEB-INF/lib`
 
 
 发布项目
@@ -59,9 +60,9 @@ dynamic-web-partly-with-angular-seed
 项目整体打包
 -----------
 
-    $ gradle getwar
+    $ gradle getWar
 
-`getwar` 任务中包含了前端代码（即使用 `AngularJS` 开发的内容）的构建任务。若要单独执行前端构建，可使用：
+`getWar` 任务中包含了前端代码（即使用 `AngularJS` 开发的内容）的构建任务。若要单独执行前端构建，可使用：
 
     $ grunt build:static
 

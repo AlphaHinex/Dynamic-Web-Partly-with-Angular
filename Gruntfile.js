@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: [
-                    'Gruntfiles.js',
+                    'Gruntfile.js',
                     '<%= ngapp.app %>/scripts/**/*.js', 
                     '!<%= ngapp.app %>/scripts/vendor/**/*.js'
                 ],

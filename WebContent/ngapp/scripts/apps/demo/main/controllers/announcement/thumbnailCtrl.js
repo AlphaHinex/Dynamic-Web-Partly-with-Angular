@@ -13,7 +13,7 @@ define([
       }
 
       var tb2 = $scope.tb2 = [];
-      for (var i = 0; i < 4; i++) {
+      for (var j = 0; j < 4; j++) {
         service.addPic(tb2, 300, 600 + tb2.length + 1);
       }
     }]);

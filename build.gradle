@@ -75,8 +75,12 @@ war {
     }
 }
 
-task buildStatic {
+task buildStatic() << {
+    // on windows:
     println "cmd /C grunt build:static".execute().text
+
+    // on linux:
+    //println "grunt build:static".execute().text
 }
 
 task getwar(dependsOn: [clean, buildStatic, war]) {}

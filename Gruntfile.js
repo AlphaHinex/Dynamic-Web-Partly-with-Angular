@@ -37,11 +37,28 @@ module.exports = function(grunt) {
         // Project settings
         ngapp: appConfig,
 
+        // copy bower installed components to dist folder
+        bower: {
+            dev: {
+                dest: '<%= ngapp.app %>/',
+                js_dest: '<%= ngapp.app %>/scripts/vendor/',
+                css_dest: '<%= ngapp.app %>/styles/',
+                fonts_dest: '<%= ngapp.app %>/fonts/',
+                options: {
+                    expand: true,
+                    packageSpecific: {
+                        'angular.js': {
+                            files: ['angular/angular.min.js']
+                        }
+                    }
+                }
+            }
+        },
+
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             js: {
                 files: [
-                    'Gruntfile.js',
                     '<%= ngapp.app %>/scripts/**/*.js', 
                     '!<%= ngapp.app %>/scripts/vendor/**/*.js'
                 ],
@@ -57,7 +74,6 @@ module.exports = function(grunt) {
             },
             all: {
                 src: [
-                    'Gruntfile.js',
                     '<%= ngapp.app %>/scripts/**/*.js',
                     '!<%= ngapp.app %>/scripts/vendor/**/*.js'
                 ]

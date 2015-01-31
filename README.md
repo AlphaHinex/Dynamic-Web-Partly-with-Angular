@@ -20,8 +20,11 @@ dynamic-web-partly-with-angular-seed
 
     $ npm install
     $ bower install
+    $ grunt bower
+    
+`bower install` 指令将所需依赖下载至 `./bower_components` 路径下，`grunt bower` 将需要使用的 `js`、`css` 等文件拷贝至相应路径下
 
-若不使用 `bower` 进行依赖管理则需要手动将需要的 `js` 类库拷贝至 `ngapp/scripts/vendor` 路径下，需要的 `js` 类库可参见 [bower.json](bower.json)
+若不使用 `bower` 进行依赖管理则需要手动将需要的 `js` 类库拷贝至相应路径下，具体路径可参照 [Gruntfile.js](Gruntfile.js) 中 `bower` 任务部分，需要的 `js` 类库可参见 [bower.json](bower.json)
 
 
 生成 eclipse 配置文件

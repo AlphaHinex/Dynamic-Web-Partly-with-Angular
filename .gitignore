@@ -20,3 +20,6 @@ WebContent/ngapp/styles/vendor
 # ingore front build folder
 WebContent/ngapp-build
 .tmp
+
+# ignore mac hidden file
+.DS_Store

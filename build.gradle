@@ -39,6 +39,11 @@ tomcat.httpPort = 9090
 tomcatRun.contextPath = archivesBaseName
 
 repositories {
+    jcenter()
+    maven {
+        url 'http://mirrors.ibiblio.org/pub/mirrors/maven2'
+    }
+    mavenCentral()
     flatDir {
         dirs 'WebContent/WEB-INF/lib'
     }
@@ -84,7 +89,7 @@ task buildStatic() << {
     //println "grunt build:static".execute().text
 }
 
-task updateContextPath() {
+task updateContextPath() << {
     def mainFilePath = "$projectDir/WebContent/ngapp-build/scripts/main.js"
     def charset = 'utf-8'
     def lines = new File(mainFilePath).readLines(charset)

@@ -14,7 +14,7 @@ WebContent/WEB-INF/lib
 # ignore node and bower
 node_modules/
 bower_components/
-WebContent/ngapp/scripts/vendor
+WebContent/ngapp/scripts/vendor/*
 WebContent/ngapp/styles/vendor
 
 # ingore front build folder
@@ -23,3 +23,7 @@ WebContent/ngapp-build
 
 # ignore mac hidden file
 .DS_Store
+
+# not ignore list
+!WebContent/ngapp/scripts/vendor/requirejs-domready-nodefine
+!WebContent/ngapp/scripts/vendor/ares

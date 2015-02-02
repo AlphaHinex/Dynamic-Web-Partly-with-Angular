@@ -65,7 +65,9 @@ module.exports = function(grunt) {
             js: {
                 files: [
                     '<%= ngapp.app %>/scripts/**/*.js', 
-                    '!<%= ngapp.app %>/scripts/vendor/**/*.js'
+                    '!<%= ngapp.app %>/scripts/vendor/**/*.js',
+                    '<%= ngapp.app %>/scripts/vendor/ares/**/*.js',
+                    '<%= ngapp.app %>/scripts/vendor/requirejs-domready-nodefine/*.js'
                 ],
                 tasks: ['newer:jshint:all']
             }

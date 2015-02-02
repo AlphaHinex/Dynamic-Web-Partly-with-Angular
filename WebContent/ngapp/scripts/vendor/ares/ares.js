@@ -1,0 +1,1 @@
+"use strict";angular.module("ares",["ares.grid"]),angular.module("ares.grid",["ui.grid"]).directive("aresGrid",function(){return{restrict:"E",compile:function(a){var b='<div ui-grid="{ data: gridData }" class="grid"></div>';return a.html(b),function(){}}}});

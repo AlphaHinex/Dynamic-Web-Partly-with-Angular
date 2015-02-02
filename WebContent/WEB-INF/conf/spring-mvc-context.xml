@@ -21,5 +21,6 @@
 	<!-- directly redirect to jsp view -->
 	<mvc:view-controller path="/demo/portal/portal.do" view-name="demo/portal/portal"/>
 	<mvc:view-controller path="/demo/portal/main.do" view-name="demo/portal/main"/>
+	<mvc:view-controller path="/demo/form/grid.do" view-name="demo/form/grid"/>
 
 </beans>

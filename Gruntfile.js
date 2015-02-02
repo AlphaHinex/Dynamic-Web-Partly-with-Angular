@@ -50,6 +50,10 @@ module.exports = function(grunt) {
                         'bootstrap': {
                             keepExpandedHierarchy: false,
                             files: ['dist/css/bootstrap.css']
+                        },
+                        'angular-ui-grid': {
+                            keepExpandedHierarchy: false,
+                            files: ['./ui-grid.js', './ui-grid.css']
                         }
                     }
                 }

@@ -40,9 +40,10 @@ module.exports = function(grunt) {
         // copy bower installed components to dist folder
         bower: {
             dev: {
-                dest: '<%= ngapp.app %>/vendor/',
+                dest: '<%= ngapp.app %>/styles/vendor/',
                 js_dest: '<%= ngapp.app %>/scripts/vendor/',
                 css_dest: '<%= ngapp.app %>/styles/vendor/',
+                font_dest: '<%= ngapp.app %>/styles/vendor/',
                 options: {
                     expand: true,
                     ignorePackages: ['jquery'],
@@ -53,7 +54,7 @@ module.exports = function(grunt) {
                         },
                         'angular-ui-grid': {
                             keepExpandedHierarchy: false,
-                            files: ['./ui-grid.js', './ui-grid.css']
+                            files: ['./ui-grid.js', './ui-grid.css', './ui-grid.ttf', './ui-grid.woff']
                         }
                     }
                 }

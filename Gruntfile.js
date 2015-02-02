@@ -118,7 +118,9 @@ module.exports = function(grunt) {
                 cwd: '<%= ngapp.app %>/scripts',
                 src: [
                     'main.js',
-                    'vendor/**/*.js'
+                    'vendor/**/*.js',
+                    '!vendor/ares/**/*.js',
+                    '!vendor/angular-ui-grid/**/*.js'
                 ],
                 dest: '<%= ngapp.dist %>/scripts'
             }]
@@ -148,10 +150,15 @@ module.exports = function(grunt) {
         ngAnnotate: {
           dist: {
             files: [{
-              expand: true,
-              cwd: '<%= ngapp.app %>/scripts',
-              src: ['**/*.js', '!vendor/**/*.js'],
-              dest: '.tmp/scripts'
+                expand: true,
+                cwd: '<%= ngapp.app %>/scripts',
+                src: [
+                    '**/*.js', 
+                    '!vendor/**/*.js',
+                    'vendor/ares/**/*.js',
+                    'vendor/angular-ui-grid/**/*.js'
+                ],
+                dest: '.tmp/scripts'
             }]
           }
         },

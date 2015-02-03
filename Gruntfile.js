@@ -178,7 +178,7 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('min:static', ['cssmin', 'copy', 'uglify', 'htmlmin', 'ngAnnotate', 'requirejs']);
+    grunt.registerTask('min:static', ['bower', 'cssmin', 'copy', 'uglify', 'htmlmin', 'ngAnnotate', 'requirejs']);
 
     grunt.registerTask('build:static', ['clean', 'min:static']);
 

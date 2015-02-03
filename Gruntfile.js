@@ -54,7 +54,7 @@ module.exports = function(grunt) {
                         },
                         'angular-ui-grid': {
                             keepExpandedHierarchy: false,
-                            files: ['./ui-grid.js', './ui-grid.css', './ui-grid.ttf', './ui-grid.woff']
+                            files: ['./ui-grid.js', './ui-grid.css', './ui-grid.woff']
                         }
                     }
                 }
@@ -109,6 +109,17 @@ module.exports = function(grunt) {
                 dest: '<%= ngapp.dist %>/styles'
             }]
           }
+        },
+
+        copy: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= ngapp.app %>/styles',
+                    src: [ '**/*.woff' ],
+                    dest: '<%= ngapp.dist %>/styles'
+                }]
+            }
         },
 
         uglify: {
@@ -167,7 +178,7 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('min:static', ['cssmin', 'uglify', 'htmlmin', 'ngAnnotate', 'requirejs']);
+    grunt.registerTask('min:static', ['cssmin', 'copy', 'uglify', 'htmlmin', 'ngAnnotate', 'requirejs']);
 
     grunt.registerTask('build:static', ['clean', 'min:static']);
 

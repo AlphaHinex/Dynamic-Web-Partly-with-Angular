@@ -418,7 +418,7 @@ define(['apps/demo/form/grid/gridModule'], function(module) {
     $scope.getPage = function(currentPage, pageSize) {
       var firstRow = (currentPage - 1) * pageSize;
       $scope.gridOptions.data = gridData.slice(firstRow, firstRow + pageSize);
-      $scope.gridOptions.totalItems = 50;
+      $scope.gridOptions.totalItems = 100;
       console.log(currentPage + ',' + pageSize);
       console.log($scope.gridOptions);
     };

@@ -416,11 +416,11 @@ define(['apps/demo/form/grid/gridModule'], function(module) {
     };
 
     $scope.getPage = function(currentPage, pageSize) {
+      // get page count from server and set it to $scope.gridOptions.totalItems
+      $scope.gridOptions.totalItems = 100;
+      // get data from server and set it to $scope.gridOptions.data
       var firstRow = (currentPage - 1) * pageSize;
       $scope.gridOptions.data = gridData.slice(firstRow, firstRow + pageSize);
-      $scope.gridOptions.totalItems = 100;
-      console.log(currentPage + ',' + pageSize);
-      console.log($scope.gridOptions);
     };
 
   });

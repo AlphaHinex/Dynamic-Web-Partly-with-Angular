@@ -5,513 +5,513 @@ define(['apps/demo/form/grid/gridModule'], function(module) {
     module.controller('BasicGridCtrl', function($scope) {
         var gridData = [
     {
-        "name": "Ethel Price",
-        "gender": "female",
-        "company": "Enersol"
+        '姓名': 'Ethel Price',
+        '性别': 'female',
+        '公司': 'Enersol'
     },
     {
-        "name": "Claudine Neal",
-        "gender": "female",
-        "company": "Sealoud"
+        '姓名': 'Claudine Neal',
+        '性别': 'female',
+        '公司': 'Sealoud'
     },
     {
-        "name": "Beryl Rice",
-        "gender": "female",
-        "company": "Velity"
+        '姓名': 'Beryl Rice',
+        '性别': 'female',
+        '公司': 'Velity'
     },
     {
-        "name": "Wilder Gonzales",
-        "gender": "male",
-        "company": "Geekko"
+        '姓名': 'Wilder Gonzales',
+        '性别': 'male',
+        '公司': 'Geekko'
     },
     {
-        "name": "Georgina Schultz",
-        "gender": "female",
-        "company": "Suretech"
+        '姓名': 'Georgina Schultz',
+        '性别': 'female',
+        '公司': 'Suretech'
     },
     {
-        "name": "Carroll Buchanan",
-        "gender": "male",
-        "company": "Ecosys"
+        '姓名': 'Carroll Buchanan',
+        '性别': 'male',
+        '公司': 'Ecosys'
     },
     {
-        "name": "Valarie Atkinson",
-        "gender": "female",
-        "company": "Hopeli"
+        '姓名': 'Valarie Atkinson',
+        '性别': 'female',
+        '公司': 'Hopeli'
     },
     {
-        "name": "Schroeder Mathews",
-        "gender": "male",
-        "company": "Polarium"
+        '姓名': 'Schroeder Mathews',
+        '性别': 'male',
+        '公司': 'Polarium'
     },
     {
-        "name": "Lynda Mendoza",
-        "gender": "female",
-        "company": "Dogspa"
+        '姓名': 'Lynda Mendoza',
+        '性别': 'female',
+        '公司': 'Dogspa'
     },
     {
-        "name": "Sarah Massey",
-        "gender": "female",
-        "company": "Bisba"
+        '姓名': 'Sarah Massey',
+        '性别': 'female',
+        '公司': 'Bisba'
     },
     {
-        "name": "Robles Boyle",
-        "gender": "male",
-        "company": "Comtract"
+        '姓名': 'Robles Boyle',
+        '性别': 'male',
+        '公司': 'Comtract'
     },
     {
-        "name": "Evans Hickman",
-        "gender": "male",
-        "company": "Parleynet"
+        '姓名': 'Evans Hickman',
+        '性别': 'male',
+        '公司': 'Parleynet'
     },
     {
-        "name": "Dawson Barber",
-        "gender": "male",
-        "company": "Dymi"
+        '姓名': 'Dawson Barber',
+        '性别': 'male',
+        '公司': 'Dymi'
     },
     {
-        "name": "Bruce Strong",
-        "gender": "male",
-        "company": "Xyqag"
+        '姓名': 'Bruce Strong',
+        '性别': 'male',
+        '公司': 'Xyqag'
     },
     {
-        "name": "Nellie Whitfield",
-        "gender": "female",
-        "company": "Exospace"
+        '姓名': 'Nellie Whitfield',
+        '性别': 'female',
+        '公司': 'Exospace'
     },
     {
-        "name": "Jackson Macias",
-        "gender": "male",
-        "company": "Aquamate"
+        '姓名': 'Jackson Macias',
+        '性别': 'male',
+        '公司': 'Aquamate'
     },
     {
-        "name": "Pena Pena",
-        "gender": "male",
-        "company": "Quarx"
+        '姓名': 'Pena Pena',
+        '性别': 'male',
+        '公司': 'Quarx'
     },
     {
-        "name": "Lelia Gates",
-        "gender": "female",
-        "company": "Proxsoft"
+        '姓名': 'Lelia Gates',
+        '性别': 'female',
+        '公司': 'Proxsoft'
     },
     {
-        "name": "Letitia Vasquez",
-        "gender": "female",
-        "company": "Slumberia"
+        '姓名': 'Letitia Vasquez',
+        '性别': 'female',
+        '公司': 'Slumberia'
     },
     {
-        "name": "Trevino Moreno",
-        "gender": "male",
-        "company": "Conjurica"
+        '姓名': 'Trevino Moreno',
+        '性别': 'male',
+        '公司': 'Conjurica'
     },
     {
-        "name": "Barr Page",
-        "gender": "male",
-        "company": "Apex"
+        '姓名': 'Barr Page',
+        '性别': 'male',
+        '公司': 'Apex'
     },
     {
-        "name": "Kirkland Merrill",
-        "gender": "male",
-        "company": "Utara"
+        '姓名': 'Kirkland Merrill',
+        '性别': 'male',
+        '公司': 'Utara'
     },
     {
-        "name": "Blanche Conley",
-        "gender": "female",
-        "company": "Imkan"
+        '姓名': 'Blanche Conley',
+        '性别': 'female',
+        '公司': 'Imkan'
     },
     {
-        "name": "Atkins Dunlap",
-        "gender": "male",
-        "company": "Comveyor"
+        '姓名': 'Atkins Dunlap',
+        '性别': 'male',
+        '公司': 'Comveyor'
     },
     {
-        "name": "Everett Foreman",
-        "gender": "male",
-        "company": "Maineland"
+        '姓名': 'Everett Foreman',
+        '性别': 'male',
+        '公司': 'Maineland'
     },
     {
-        "name": "Gould Randolph",
-        "gender": "male",
-        "company": "Intergeek"
+        '姓名': 'Gould Randolph',
+        '性别': 'male',
+        '公司': 'Intergeek'
     },
     {
-        "name": "Kelli Leon",
-        "gender": "female",
-        "company": "Verbus"
+        '姓名': 'Kelli Leon',
+        '性别': 'female',
+        '公司': 'Verbus'
     },
     {
-        "name": "Freda Mason",
-        "gender": "female",
-        "company": "Accidency"
+        '姓名': 'Freda Mason',
+        '性别': 'female',
+        '公司': 'Accidency'
     },
     {
-        "name": "Tucker Maxwell",
-        "gender": "male",
-        "company": "Lumbrex"
+        '姓名': 'Tucker Maxwell',
+        '性别': 'male',
+        '公司': 'Lumbrex'
     },
     {
-        "name": "Yvonne Parsons",
-        "gender": "female",
-        "company": "Zolar"
+        '姓名': 'Yvonne Parsons',
+        '性别': 'female',
+        '公司': 'Zolar'
     },
     {
-        "name": "Woods Key",
-        "gender": "male",
-        "company": "Bedder"
+        '姓名': 'Woods Key',
+        '性别': 'male',
+        '公司': 'Bedder'
     },
     {
-        "name": "Stephens Reilly",
-        "gender": "male",
-        "company": "Acusage"
+        '姓名': 'Stephens Reilly',
+        '性别': 'male',
+        '公司': 'Acusage'
     },
     {
-        "name": "Mcfarland Sparks",
-        "gender": "male",
-        "company": "Comvey"
+        '姓名': 'Mcfarland Sparks',
+        '性别': 'male',
+        '公司': 'Comvey'
     },
     {
-        "name": "Jocelyn Sawyer",
-        "gender": "female",
-        "company": "Fortean"
+        '姓名': 'Jocelyn Sawyer',
+        '性别': 'female',
+        '公司': 'Fortean'
     },
     {
-        "name": "Renee Barr",
-        "gender": "female",
-        "company": "Kiggle"
+        '姓名': 'Renee Barr',
+        '性别': 'female',
+        '公司': 'Kiggle'
     },
     {
-        "name": "Gaines Beck",
-        "gender": "male",
-        "company": "Sequitur"
+        '姓名': 'Gaines Beck',
+        '性别': 'male',
+        '公司': 'Sequitur'
     },
     {
-        "name": "Luisa Farrell",
-        "gender": "female",
-        "company": "Cinesanct"
+        '姓名': 'Luisa Farrell',
+        '性别': 'female',
+        '公司': 'Cinesanct'
     },
     {
-        "name": "Robyn Strickland",
-        "gender": "female",
-        "company": "Obones"
+        '姓名': 'Robyn Strickland',
+        '性别': 'female',
+        '公司': 'Obones'
     },
     {
-        "name": "Roseann Jarvis",
-        "gender": "female",
-        "company": "Aquazure"
+        '姓名': 'Roseann Jarvis',
+        '性别': 'female',
+        '公司': 'Aquazure'
     },
     {
-        "name": "Johnston Park",
-        "gender": "male",
-        "company": "Netur"
+        '姓名': 'Johnston Park',
+        '性别': 'male',
+        '公司': 'Netur'
     },
     {
-        "name": "Wong Craft",
-        "gender": "male",
-        "company": "Opticall"
+        '姓名': 'Wong Craft',
+        '性别': 'male',
+        '公司': 'Opticall'
     },
     {
-        "name": "Merritt Cole",
-        "gender": "male",
-        "company": "Techtrix"
+        '姓名': 'Merritt Cole',
+        '性别': 'male',
+        '公司': 'Techtrix'
     },
     {
-        "name": "Dale Byrd",
-        "gender": "female",
-        "company": "Kneedles"
+        '姓名': 'Dale Byrd',
+        '性别': 'female',
+        '公司': 'Kneedles'
     },
     {
-        "name": "Sara Delgado",
-        "gender": "female",
-        "company": "Netagy"
+        '姓名': 'Sara Delgado',
+        '性别': 'female',
+        '公司': 'Netagy'
     },
     {
-        "name": "Alisha Myers",
-        "gender": "female",
-        "company": "Intradisk"
+        '姓名': 'Alisha Myers',
+        '性别': 'female',
+        '公司': 'Intradisk'
     },
     {
-        "name": "Felecia Smith",
-        "gender": "female",
-        "company": "Futurity"
+        '姓名': 'Felecia Smith',
+        '性别': 'female',
+        '公司': 'Futurity'
     },
     {
-        "name": "Neal Harvey",
-        "gender": "male",
-        "company": "Pyramax"
+        '姓名': 'Neal Harvey',
+        '性别': 'male',
+        '公司': 'Pyramax'
     },
     {
-        "name": "Nola Miles",
-        "gender": "female",
-        "company": "Sonique"
+        '姓名': 'Nola Miles',
+        '性别': 'female',
+        '公司': 'Sonique'
     },
     {
-        "name": "Herring Pierce",
-        "gender": "male",
-        "company": "Geeketron"
+        '姓名': 'Herring Pierce',
+        '性别': 'male',
+        '公司': 'Geeketron'
     },
     {
-        "name": "Shelley Rodriquez",
-        "gender": "female",
-        "company": "Bostonic"
+        '姓名': 'Shelley Rodriquez',
+        '性别': 'female',
+        '公司': 'Bostonic'
     },
     {
-        "name": "Cora Chase",
-        "gender": "female",
-        "company": "Isonus"
+        '姓名': 'Cora Chase',
+        '性别': 'female',
+        '公司': 'Isonus'
     },
     {
-        "name": "Mckay Santos",
-        "gender": "male",
-        "company": "Amtas"
+        '姓名': 'Mckay Santos',
+        '性别': 'male',
+        '公司': 'Amtas'
     },
     {
-        "name": "Hilda Crane",
-        "gender": "female",
-        "company": "Jumpstack"
+        '姓名': 'Hilda Crane',
+        '性别': 'female',
+        '公司': 'Jumpstack'
     },
     {
-        "name": "Jeanne Lindsay",
-        "gender": "female",
-        "company": "Genesynk"
+        '姓名': 'Jeanne Lindsay',
+        '性别': 'female',
+        '公司': 'Genesynk'
     },
     {
-        "name": "Frye Sharpe",
-        "gender": "male",
-        "company": "Eplode"
+        '姓名': 'Frye Sharpe',
+        '性别': 'male',
+        '公司': 'Eplode'
     },
     {
-        "name": "Velma Fry",
-        "gender": "female",
-        "company": "Ronelon"
+        '姓名': 'Velma Fry',
+        '性别': 'female',
+        '公司': 'Ronelon'
     },
     {
-        "name": "Reyna Espinoza",
-        "gender": "female",
-        "company": "Prismatic"
+        '姓名': 'Reyna Espinoza',
+        '性别': 'female',
+        '公司': 'Prismatic'
     },
     {
-        "name": "Spencer Sloan",
-        "gender": "male",
-        "company": "Comverges"
+        '姓名': 'Spencer Sloan',
+        '性别': 'male',
+        '公司': 'Comverges'
     },
     {
-        "name": "Graham Marsh",
-        "gender": "male",
-        "company": "Medifax"
+        '姓名': 'Graham Marsh',
+        '性别': 'male',
+        '公司': 'Medifax'
     },
     {
-        "name": "Hale Boone",
-        "gender": "male",
-        "company": "Digial"
+        '姓名': 'Hale Boone',
+        '性别': 'male',
+        '公司': 'Digial'
     },
     {
-        "name": "Wiley Hubbard",
-        "gender": "male",
-        "company": "Zensus"
+        '姓名': 'Wiley Hubbard',
+        '性别': 'male',
+        '公司': 'Zensus'
     },
     {
-        "name": "Blackburn Drake",
-        "gender": "male",
-        "company": "Frenex"
+        '姓名': 'Blackburn Drake',
+        '性别': 'male',
+        '公司': 'Frenex'
     },
     {
-        "name": "Franco Hunter",
-        "gender": "male",
-        "company": "Rockabye"
+        '姓名': 'Franco Hunter',
+        '性别': 'male',
+        '公司': 'Rockabye'
     },
     {
-        "name": "Barnett Case",
-        "gender": "male",
-        "company": "Norali"
+        '姓名': 'Barnett Case',
+        '性别': 'male',
+        '公司': 'Norali'
     },
     {
-        "name": "Alexander Foley",
-        "gender": "male",
-        "company": "Geekosis"
+        '姓名': 'Alexander Foley',
+        '性别': 'male',
+        '公司': 'Geekosis'
     },
     {
-        "name": "Lynette Stein",
-        "gender": "female",
-        "company": "Macronaut"
+        '姓名': 'Lynette Stein',
+        '性别': 'female',
+        '公司': 'Macronaut'
     },
     {
-        "name": "Anthony Joyner",
-        "gender": "male",
-        "company": "Senmei"
+        '姓名': 'Anthony Joyner',
+        '性别': 'male',
+        '公司': 'Senmei'
     },
     {
-        "name": "Garrett Brennan",
-        "gender": "male",
-        "company": "Bluegrain"
+        '姓名': 'Garrett Brennan',
+        '性别': 'male',
+        '公司': 'Bluegrain'
     },
     {
-        "name": "Betsy Horton",
-        "gender": "female",
-        "company": "Zilla"
+        '姓名': 'Betsy Horton',
+        '性别': 'female',
+        '公司': 'Zilla'
     },
     {
-        "name": "Patton Small",
-        "gender": "male",
-        "company": "Genmex"
+        '姓名': 'Patton Small',
+        '性别': 'male',
+        '公司': 'Genmex'
     },
     {
-        "name": "Lakisha Huber",
-        "gender": "female",
-        "company": "Insource"
+        '姓名': 'Lakisha Huber',
+        '性别': 'female',
+        '公司': 'Insource'
     },
     {
-        "name": "Lindsay Avery",
-        "gender": "female",
-        "company": "Unq"
+        '姓名': 'Lindsay Avery',
+        '性别': 'female',
+        '公司': 'Unq'
     },
     {
-        "name": "Ayers Hood",
-        "gender": "male",
-        "company": "Accuprint"
+        '姓名': 'Ayers Hood',
+        '性别': 'male',
+        '公司': 'Accuprint'
     },
     {
-        "name": "Torres Durham",
-        "gender": "male",
-        "company": "Uplinx"
+        '姓名': 'Torres Durham',
+        '性别': 'male',
+        '公司': 'Uplinx'
     },
     {
-        "name": "Vincent Hernandez",
-        "gender": "male",
-        "company": "Talendula"
+        '姓名': 'Vincent Hernandez',
+        '性别': 'male',
+        '公司': 'Talendula'
     },
     {
-        "name": "Baird Ryan",
-        "gender": "male",
-        "company": "Aquasseur"
+        '姓名': 'Baird Ryan',
+        '性别': 'male',
+        '公司': 'Aquasseur'
     },
     {
-        "name": "Georgia Mercer",
-        "gender": "female",
-        "company": "Skyplex"
+        '姓名': 'Georgia Mercer',
+        '性别': 'female',
+        '公司': 'Skyplex'
     },
     {
-        "name": "Francesca Elliott",
-        "gender": "female",
-        "company": "Nspire"
+        '姓名': 'Francesca Elliott',
+        '性别': 'female',
+        '公司': 'Nspire'
     },
     {
-        "name": "Lyons Peters",
-        "gender": "male",
-        "company": "Quinex"
+        '姓名': 'Lyons Peters',
+        '性别': 'male',
+        '公司': 'Quinex'
     },
     {
-        "name": "Kristi Brewer",
-        "gender": "female",
-        "company": "Oronoko"
+        '姓名': 'Kristi Brewer',
+        '性别': 'female',
+        '公司': 'Oronoko'
     },
     {
-        "name": "Tonya Bray",
-        "gender": "female",
-        "company": "Insuron"
+        '姓名': 'Tonya Bray',
+        '性别': 'female',
+        '公司': 'Insuron'
     },
     {
-        "name": "Valenzuela Huff",
-        "gender": "male",
-        "company": "Applideck"
+        '姓名': 'Valenzuela Huff',
+        '性别': 'male',
+        '公司': 'Applideck'
     },
     {
-        "name": "Tiffany Anderson",
-        "gender": "female",
-        "company": "Zanymax"
+        '姓名': 'Tiffany Anderson',
+        '性别': 'female',
+        '公司': 'Zanymax'
     },
     {
-        "name": "Jerri King",
-        "gender": "female",
-        "company": "Eventex"
+        '姓名': 'Jerri King',
+        '性别': 'female',
+        '公司': 'Eventex'
     },
     {
-        "name": "Rocha Meadows",
-        "gender": "male",
-        "company": "Goko"
+        '姓名': 'Rocha Meadows',
+        '性别': 'male',
+        '公司': 'Goko'
     },
     {
-        "name": "Marcy Green",
-        "gender": "female",
-        "company": "Pharmex"
+        '姓名': 'Marcy Green',
+        '性别': 'female',
+        '公司': 'Pharmex'
     },
     {
-        "name": "Kirk Cross",
-        "gender": "male",
-        "company": "Portico"
+        '姓名': 'Kirk Cross',
+        '性别': 'male',
+        '公司': 'Portico'
     },
     {
-        "name": "Hattie Mullen",
-        "gender": "female",
-        "company": "Zilencio"
+        '姓名': 'Hattie Mullen',
+        '性别': 'female',
+        '公司': 'Zilencio'
     },
     {
-        "name": "Deann Bridges",
-        "gender": "female",
-        "company": "Equitox"
+        '姓名': 'Deann Bridges',
+        '性别': 'female',
+        '公司': 'Equitox'
     },
     {
-        "name": "Chaney Roach",
-        "gender": "male",
-        "company": "Qualitern"
+        '姓名': 'Chaney Roach',
+        '性别': 'male',
+        '公司': 'Qualitern'
     },
     {
-        "name": "Consuelo Dickson",
-        "gender": "female",
-        "company": "Poshome"
+        '姓名': 'Consuelo Dickson',
+        '性别': 'female',
+        '公司': 'Poshome'
     },
     {
-        "name": "Billie Rowe",
-        "gender": "female",
-        "company": "Cemention"
+        '姓名': 'Billie Rowe',
+        '性别': 'female',
+        '公司': 'Cemention'
     },
     {
-        "name": "Bean Donovan",
-        "gender": "male",
-        "company": "Mantro"
+        '姓名': 'Bean Donovan',
+        '性别': 'male',
+        '公司': 'Mantro'
     },
     {
-        "name": "Lancaster Patel",
-        "gender": "male",
-        "company": "Krog"
+        '姓名': 'Lancaster Patel',
+        '性别': 'male',
+        '公司': 'Krog'
     },
     {
-        "name": "Rosa Dyer",
-        "gender": "female",
-        "company": "Netility"
+        '姓名': 'Rosa Dyer',
+        '性别': 'female',
+        '公司': 'Netility'
     },
     {
-        "name": "Christine Compton",
-        "gender": "female",
-        "company": "Bleeko"
+        '姓名': 'Christine Compton',
+        '性别': 'female',
+        '公司': 'Bleeko'
     },
     {
-        "name": "Milagros Finch",
-        "gender": "female",
-        "company": "Handshake"
+        '姓名': 'Milagros Finch',
+        '性别': 'female',
+        '公司': 'Handshake'
     },
     {
-        "name": "Ericka Alvarado",
-        "gender": "female",
-        "company": "Lyrichord"
+        '姓名': 'Ericka Alvarado',
+        '性别': 'female',
+        '公司': 'Lyrichord'
     },
     {
-        "name": "Sylvia Sosa",
-        "gender": "female",
-        "company": "Circum"
+        '姓名': 'Sylvia Sosa',
+        '性别': 'female',
+        '公司': 'Circum'
     },
     {
-        "name": "Humphrey Curtis",
-        "gender": "male",
-        "company": "Corepan"
+        '姓名': 'Humphrey Curtis',
+        '性别': 'male',
+        '公司': 'Corepan'
     }
 ];
 
         $scope.gridOptions = {
             data: gridData,
             columnDefs: [
-                {name: 'name'},
-                {name: 'gender'},
-                {name: 'company'}
+                {name: '姓名'},
+                {name: '性别'},
+                {name: '公司'}
             ]
         }
 

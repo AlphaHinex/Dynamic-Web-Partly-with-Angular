@@ -415,7 +415,13 @@ define(['apps/demo/form/grid/gridModule'], function(module) {
       }]
     };
 
-    $scope.getPage = function(currentPage, pageSize) {
+    $scope.getPage = function(currentPage, pageSize, sortColumns) {
+      // get sorted data from server side use sortColumns variable
+      if(sortColumns && sortColumns.length > 0) {
+        angular.forEach(sortColumns, function(column) {
+          console.log('sort by ' + column.field + ' field with ' + column.sort.direction);
+        });
+      }
       // get page count from server and set it to $scope.gridOptions.totalItems
       $scope.gridOptions.totalItems = 100;
       // get data from server and set it to $scope.gridOptions.data
@@ -426,7 +432,7 @@ define(['apps/demo/form/grid/gridModule'], function(module) {
     $scope.exportAll = function (grid) {
       // get all data from server for export using
       grid.options.data = gridData;
-      // and then 
+      // and then modify rows in grid
       grid.modifyRows(grid.options.data);
     };
 

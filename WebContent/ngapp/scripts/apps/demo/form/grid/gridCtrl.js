@@ -2,7 +2,7 @@
 
 define(['apps/demo/form/grid/gridModule'], function(module) {
 
-  module.controller('BasicGridCtrl', function($scope) {
+  module.controller('BasicGridCtrl', ['$scope', function($scope) {
     var gridData = [{
       'name': 'Ethel Price',
       'gender': 'female',
@@ -423,6 +423,13 @@ define(['apps/demo/form/grid/gridModule'], function(module) {
       $scope.gridOptions.data = gridData.slice(firstRow, firstRow + pageSize);
     };
 
-  });
+    $scope.exportAll = function (grid) {
+      // get all data from server for export using
+      grid.options.data = gridData;
+      // and then 
+      grid.modifyRows(grid.options.data);
+    };
+
+  }]);
 
 });

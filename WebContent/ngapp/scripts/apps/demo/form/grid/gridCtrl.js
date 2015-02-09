@@ -429,7 +429,7 @@ define(['apps/demo/form/grid/gridModule'], function(module) {
       $scope.gridOptions.data = gridData.slice(firstRow, firstRow + pageSize);
     };
 
-    $scope.exportAll = function (grid) {
+    $scope.exportAll = function () {
       // get all data from server for export using
       $scope.gridOptions.data = gridData;
     };

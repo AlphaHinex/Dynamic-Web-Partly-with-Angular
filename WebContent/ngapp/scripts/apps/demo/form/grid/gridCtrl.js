@@ -431,9 +431,7 @@ define(['apps/demo/form/grid/gridModule'], function(module) {
 
     $scope.exportAll = function (grid) {
       // get all data from server for export using
-      grid.options.data = gridData;
-      // and then modify rows in grid
-      grid.modifyRows(grid.options.data);
+      $scope.gridOptions.data = gridData;
     };
 
   }]);

@@ -5,6 +5,18 @@ dynamic-web-partly-with-angular-seed
 概述
 ----
 
+本项目为在普通的 `jsp` 动态 `web` 项目中，部分结合 `AngularJS` 及其相关类库进行开发的样板项目
+
+不同于典型的单页面应用，每个开发（业务）模块可以作为一个小的单页面应用，且入口页面为 `jsp` 页面，通过 `jsp:include` 的方式将使用 `AngularJS` 开发的 `html` 页面并入其中
+
+入口页面上，除了引入必须的几个 `js` 类库（`angular.js`、`require.js`、`domReady.js`）外，其余应用所需的 `js` 脚本采用 `require.js` 按模块开发及加载
+
+[main.js](WebContent/ngapp/scripts/main.js) 为 `require.js` 总入口点，定义了 `web` 应用的 `contextPath` 和 `require.js` 加载 `js` 的根路径
+
+`bootstrap.js` （不是 `twitter bootstrap` 框架）是每个模块的入口点，负责在入口页面加载完成后，bootstrap 页面元素和 angular module，并设定 `js` 的加载顺序
+
+前端代码构建时，会将各模块开发的 `js` 连接并压缩为一个文件。整体打包时，会根据打包脚本中的配置，自动修改 [main.js](WebContent/ngapp/scripts/main.js) 中的 `contextPath`，可将构建出的 `war` 包直接发布到 `web` 容器内
+
 
 准备工作
 -------
@@ -77,7 +89,7 @@ dynamic-web-partly-with-angular-seed
 
 `getWar` 任务中包含了前端代码的构建任务，之后会根据 [build.gradle](build.gradle) 中设置的 `archivesBaseName` 修改编译后的 `RequireJS` 入口文件 `main.js`，并将其打入 `war` 包中。
 
-即，使用此方式打 `war` 包无需再手动修改 `war` 包中内容（以 `war` 包名称作为 `contextPath`），可直接发布至 web 容器内
+即，使用此方式打 `war` 包无需再手动修改 `war` 包中内容（以 `war` 包名称作为 `contextPath`），可直接发布至 `web` 容器内
 
 
 监控 `js` 代码质量
@@ -230,3 +242,4 @@ dynamic-web-partly-with-angular-seed
 * `service` 脚本以 `Service.js` 结尾
 * `directive` 脚本以 `Directive.js` 结尾
 * `module` 脚本以 `Module.js` 结尾
+* `module` 命名规则按照 `ngapp/scripts/apps` 路径下的包名命名，中间以 `-` 间隔，如 [ngapp/scripts/apps/demo/portal/portletModule.js](WebContent/ngapp/scripts/apps/demo/portal/portletModule.js) 中定义的 `module` 名为 `demo-portal-portlet`

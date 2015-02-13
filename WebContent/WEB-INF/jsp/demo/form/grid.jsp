@@ -10,7 +10,7 @@
 
   <div id="gridDiv" class="container-fluid">
     <div id="basicGrid" class="row">
-        <jsp:include page="/ngapp/views/demo/form/grid.html"></jsp:include>
+      <%@ include file="/ngapp/views/demo/form/grid.html" %>
     </div>
   </div>
 

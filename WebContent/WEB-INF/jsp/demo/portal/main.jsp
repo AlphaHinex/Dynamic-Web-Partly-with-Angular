@@ -15,10 +15,10 @@
       </div>
 
       <div class="col-md-4">
-        <jsp:include page="/ngapp/views/demo/main/announcement/pic.html"></jsp:include>
+        <%@ include file="/ngapp/views/demo/main/announcement/pic.html" %>
       </div>
       <div class="col-md-6">
-        <jsp:include page="/ngapp/views/demo/main/announcement/thumbnail.html"></jsp:include>
+        <%@ include file="/ngapp/views/demo/main/announcement/thumbnail.html" %>
       </div>
     </div>
   </div>

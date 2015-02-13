@@ -7,24 +7,24 @@
 </head>
 <body>
 
-    <div id="portlet1">
-        <jsp:include page="/ngapp/views/demo/portal/portlet1.html"></jsp:include>
-    </div>
+  <div id="portlet1">
+    <%@ include file="/ngapp/views/demo/portal/portlet1.html" %>
+  </div>
 
-    <div id="portlet2">
-        <jsp:include page="/ngapp/views/demo/portal/portlet1.html"></jsp:include>
-    </div>
+  <div id="portlet2">
+    <%@ include file="/ngapp/views/demo/portal/portlet1.html" %>
+  </div>
 
-    <div>
-        <jsp:include page="/ngapp/views/demo/portal/portlet2.html"></jsp:include>
-    </div>
+  <div>
+    <%@ include file="/ngapp/views/demo/portal/portlet2.html" %>
+  </div>
 
-    <script src="${pageContext.request.contextPath}/ngapp/scripts/vendor/angular/angular.js"></script>
-    <script data-main="${pageContext.request.contextPath}/ngapp/scripts/main.js" src="${pageContext.request.contextPath}/ngapp/scripts/vendor/requirejs/require.js"></script>
-    <script src="${pageContext.request.contextPath}/ngapp/scripts/vendor/requirejs-domready-nodefine/domReady.js"></script>
-    <script type="text/javascript">
-    require(['apps/demo/portal/bootstrap']);
-    </script>
+  <script src="${pageContext.request.contextPath}/ngapp/scripts/vendor/angular/angular.js"></script>
+  <script data-main="${pageContext.request.contextPath}/ngapp/scripts/main.js" src="${pageContext.request.contextPath}/ngapp/scripts/vendor/requirejs/require.js"></script>
+  <script src="${pageContext.request.contextPath}/ngapp/scripts/vendor/requirejs-domready-nodefine/domReady.js"></script>
+  <script type="text/javascript">
+  require(['apps/demo/portal/bootstrap']);
+  </script>
 
 </body>
 </html>

@@ -9,11 +9,11 @@
 
     <div>
         <h3>Portal</h3>
-        <a href="${pageContext.request.contextPath}/demo/portal/portal.do">Portal Page</a><br>
-        <a href="${pageContext.request.contextPath}/demo/portal/main.do">Main Page</a><br>
+        <a href="${pageContext.request.contextPath}/demo/portal/portal">Portal Page</a><br>
+        <a href="${pageContext.request.contextPath}/demo/portal/main">Main Page</a><br>
 
         <h3>Form Components</h3>
-        <a href="${pageContext.request.contextPath}/demo/form/grid.do">Grid Demo</a>
+        <a href="${pageContext.request.contextPath}/demo/form/grid">Grid Demo</a>
     </div>
 
 </body>
